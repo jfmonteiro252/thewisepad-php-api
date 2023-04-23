@@ -27,5 +27,8 @@
         "grumphp": [
             "./vendor/bin/grumphp run"
         ]
+    },
+    "require": {
+        "php-slang/php-slang": "^0.1.3"
     }
 }
