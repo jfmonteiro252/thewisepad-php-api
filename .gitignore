@@ -1,2 +1,6 @@
+# composer
 var/
 vendor/
+
+# phpunit
+.phpunit.result.cache
