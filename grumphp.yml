@@ -1,0 +1,10 @@
+grumphp:
+  tasks:
+    phpcs:
+      standard: PSR12
+    phpstan:
+      level: 8
+    phpunit:
+      always_execute: true
+    securitychecker_enlightn:
+      run_always: true
