@@ -2,10 +2,13 @@
 version: '3'
 services:
   php:
-    image: php:8.1-cli
-    restart: never
+    build: ./docker/php/
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - .:/app
+      - ./docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
     working_dir: /app
   composer:
     image: composer
@@ -13,4 +16,3 @@ services:
       - COMPOSER_CACHE_DIR=/app/var/cache/composer
     volumes:
       - .:/app
-    restart: never
