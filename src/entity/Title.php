@@ -2,8 +2,7 @@
 
 namespace Jfmonteiro252\ThewisepadPhpApi\entity;
 
-use Jfmonteiro252\ThewisepadPhpApi\entity\error\LargeLengthTitleError;
-use Jfmonteiro252\ThewisepadPhpApi\entity\error\SmallLengthTitleError;
+use Jfmonteiro252\ThewisepadPhpApi\entity\error\InvalidTitleError;
 use PhpSlang\Either\Either;
 use PhpSlang\Either\Left;
 use PhpSlang\Either\Right;
@@ -22,7 +21,7 @@ class Title
     public static function validateMininumLength(string $title): Either
     {
         if (strlen($title) < self::LENGTH_MINIMUM) {
-            return new Left(new SmallLengthTitleError($title));
+            return new Left(new InvalidTitleError($title));
         };
 
         return new Right(true);
@@ -31,7 +30,7 @@ class Title
     public static function validateMaximumLength(string $title): Either
     {
         if (strlen($title) > self::LENGTH_MAXIMUM) {
-            return new Left(new LargeLengthTitleError($title));
+            return new Left(new InvalidTitleError($title));
         };
 
         return new Right(true);

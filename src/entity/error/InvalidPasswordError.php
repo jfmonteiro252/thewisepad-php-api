@@ -2,7 +2,7 @@
 
 namespace Jfmonteiro252\ThewisepadPhpApi\entity\error;
 
-class SmallLengthPasswordError
+class InvalidPasswordError
 {
     private string $value;
 

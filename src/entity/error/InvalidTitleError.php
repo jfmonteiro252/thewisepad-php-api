@@ -2,7 +2,7 @@
 
 namespace Jfmonteiro252\ThewisepadPhpApi\entity\error;
 
-class LargeLengthTitleError
+class InvalidTitleError
 {
     private string $value;
 

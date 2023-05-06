@@ -2,8 +2,7 @@
 
 namespace Jfmonteiro252\ThewisepadPhpApi\test\unit\entity;
 
-use Jfmonteiro252\ThewisepadPhpApi\entity\error\NoNumberPasswordError;
-use Jfmonteiro252\ThewisepadPhpApi\entity\error\SmallLengthPasswordError;
+use Jfmonteiro252\ThewisepadPhpApi\entity\error\InvalidPasswordError;
 use Jfmonteiro252\ThewisepadPhpApi\entity\Password;
 use PHPUnit\Framework\TestCase;
 
@@ -15,7 +14,7 @@ final class PasswordTest extends TestCase
         $this->assertTrue($password->isLeft());
 
         $password->left(function ($e) {
-            $this->assertTrue($e instanceof NoNumberPasswordError);
+            $this->assertTrue($e instanceof InvalidPasswordError);
         });
     }
 
@@ -25,7 +24,7 @@ final class PasswordTest extends TestCase
         $this->assertTrue($password->isLeft());
 
         $password->left(function ($e) {
-            $this->assertTrue($e instanceof SmallLengthPasswordError);
+            $this->assertTrue($e instanceof InvalidPasswordError);
         });
     }
 

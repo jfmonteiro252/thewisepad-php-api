@@ -1,7 +1,6 @@
 <?php
 
-use Jfmonteiro252\ThewisepadPhpApi\entity\error\LargeLengthTitleError;
-use Jfmonteiro252\ThewisepadPhpApi\entity\error\SmallLengthTitleError;
+use Jfmonteiro252\ThewisepadPhpApi\entity\error\InvalidTitleError;
 use Jfmonteiro252\ThewisepadPhpApi\entity\Title;
 use PHPUnit\Framework\TestCase;
 
@@ -13,7 +12,7 @@ class TitleTest extends TestCase
         $this->assertTrue($title->isLeft());
 
         $title->left(function ($e) {
-            $this->assertTrue($e instanceof SmallLengthTitleError);
+            $this->assertTrue($e instanceof InvalidTitleError);
         });
     }
 
@@ -29,7 +28,7 @@ class TitleTest extends TestCase
         $this->assertTrue($title->isLeft());
 
         $title->left(function ($e) {
-            $this->assertTrue($e instanceof LargeLengthTitleError);
+            $this->assertTrue($e instanceof InvalidTitleError);
         });
     }
 

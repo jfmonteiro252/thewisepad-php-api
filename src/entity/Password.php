@@ -2,8 +2,7 @@
 
 namespace Jfmonteiro252\ThewisepadPhpApi\entity;
 
-use Jfmonteiro252\ThewisepadPhpApi\entity\error\NoNumberPasswordError;
-use Jfmonteiro252\ThewisepadPhpApi\entity\error\SmallLengthPasswordError;
+use Jfmonteiro252\ThewisepadPhpApi\entity\error\InvalidPasswordError;
 use PhpSlang\Either\Either;
 use PhpSlang\Either\Left;
 use PhpSlang\Either\Right;
@@ -20,7 +19,7 @@ class Password
     public static function validateContainsNumber(string $password): Either
     {
         if (!preg_match('/\d/', $password)) {
-            return new Left(new NoNumberPasswordError($password));
+            return new Left(new InvalidPasswordError($password));
         };
 
         return new Right(true);
@@ -29,7 +28,7 @@ class Password
     public static function validateMininumLength(string $password): Either
     {
         if (strlen($password) < 6) {
-            return new Left(new SmallLengthPasswordError($password));
+            return new Left(new InvalidPasswordError($password));
         };
 
         return new Right(true);
