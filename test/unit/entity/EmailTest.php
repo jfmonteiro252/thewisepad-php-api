@@ -7,7 +7,7 @@ use Jfmonteiro252\ThewisepadPhpApi\entity\error\InvalidEmailError;
 
 final class EmailTest extends \PHPUnit\Framework\TestCase
 {
-    public function testCostructorInvalidEmail()
+    public function testCostructorInvalidEmail(): void
     {
         $email = Email::create('swim-printed-21@inboxkitten');
         $this->assertTrue($email->isLeft());
@@ -17,7 +17,7 @@ final class EmailTest extends \PHPUnit\Framework\TestCase
         });
     }
 
-    public function testConstructorValidEmail()
+    public function testConstructorValidEmail(): void
     {
         $email = Email::create('swim-printed-21@inboxkitten.com');
         $this->assertTrue($email->isRight());

@@ -9,14 +9,14 @@ use PhpSlang\Either\Right;
 
 class Email
 {
-    private $value;
+    private string $value;
 
-    private function __construct($email)
+    private function __construct(string $email)
     {
         $this->value = $email;
     }
 
-    public static function create($email): Either
+    public static function create(string $email): Either
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return new Left(new InvalidEmailError($email));
@@ -25,7 +25,7 @@ class Email
         return new Right(new Email($email));
     }
 
-    public function getValue()
+    public function getValue(): string
     {
         return $this->value;
     }
