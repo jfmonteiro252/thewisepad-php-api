@@ -1,5 +1,7 @@
 <?php
 
+namespace Jfmonteiro252\ThewisepadPhpApi\test\unit\entity;
+
 use Jfmonteiro252\ThewisepadPhpApi\entity\Email;
 use Jfmonteiro252\ThewisepadPhpApi\entity\error\InvalidEmailError;
 
