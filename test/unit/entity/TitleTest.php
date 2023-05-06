@@ -1,5 +1,7 @@
 <?php
 
+namespace Jfmonteiro252\ThewisepadPhpApi\test\unit\entity
+
 use Jfmonteiro252\ThewisepadPhpApi\entity\error\InvalidTitleError;
 use Jfmonteiro252\ThewisepadPhpApi\entity\Title;
 use PHPUnit\Framework\TestCase;
@@ -32,7 +34,7 @@ class TitleTest extends TestCase
         });
     }
 
-    public function testValid()
+    public function testValid(): void
     {
         $title = Title::create('Movies to watch');
         $this->assertTrue($title->isRight());
