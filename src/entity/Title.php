@@ -9,8 +9,8 @@ use PhpSlang\Either\Right;
 
 class Title
 {
-    const LENGTH_MINIMUM = 4;
-    const LENGTH_MAXIMUM = 200;
+    private const LENGTH_MINIMUM = 4;
+    private const LENGTH_MAXIMUM = 200;
     private string $value;
 
     private function __construct(string $title)
