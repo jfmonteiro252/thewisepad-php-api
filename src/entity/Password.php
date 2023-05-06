@@ -60,7 +60,7 @@ class Password
         return new Right(new Password($password));
     }
 
-    public function getValue()
+    public function getValue(): string
     {
         return $this->value;
     }
