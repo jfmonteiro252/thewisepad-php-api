@@ -20,7 +20,7 @@ class Password
     public static function validateContainsNumber(string $password): Either
     {
         if (!preg_match('/\d/', $password)) {
-            return new Left(new NoNumberPasswordError($password)); 
+            return new Left(new NoNumberPasswordError($password));
         };
 
         return new Right(true);
@@ -29,7 +29,7 @@ class Password
     public static function validateMininumLength(string $password): Either
     {
         if (strlen($password) < 6) {
-            return new Left(new SmallLengthPasswordError($password)); 
+            return new Left(new SmallLengthPasswordError($password));
         };
 
         return new Right(true);
@@ -40,7 +40,7 @@ class Password
         $validation = self::validateContainsNumber($password);
         if ($validation->isLeft()) {
             return $validation;
-        } 
+        }
 
         $validation = self::validateMininumLength($password);
         if ($validation->isLeft()) {
