@@ -10,31 +10,25 @@ final class PasswordTest extends TestCase
 {
     public function testNoNumber(): void
     {
-        $password = Password::create('ZIONOIOI');
-        $this->assertTrue($password->isLeft());
-
-        $password->left(function ($e) {
-            $this->assertTrue($e instanceof InvalidPasswordError);
-        });
+        $passwordOrError = Password::create('ZIONOIOI');
+        $this->assertTrue($passwordOrError->isLeft());
+        $errorObject = $passwordOrError->get();
+        $this->assertTrue($errorObject instanceof InvalidPasswordError);
     }
 
     public function testSmallLength(): void
     {
-        $password = Password::create('Z10N');
-        $this->assertTrue($password->isLeft());
-
-        $password->left(function ($e) {
-            $this->assertTrue($e instanceof InvalidPasswordError);
-        });
+        $passwordOrError = Password::create('Z10N');
+        $this->assertTrue($passwordOrError->isLeft());
+        $errorObject = $passwordOrError->get();
+        $this->assertTrue($errorObject instanceof InvalidPasswordError);
     }
 
     public function testValid(): void
     {
-        $password = Password::create('Z10N0101');
-        $this->assertTrue($password->isRight());
-
-        $password->right(function ($e) {
-            $this->assertSame('Z10N0101', $e->getValue());
-        });
+        $passwordOrError = Password::create('Z10N0101');
+        $this->assertTrue($passwordOrError->isRight());
+        $passwordObject = $passwordOrError->get();
+        $this->assertSame('Z10N0101', $passwordObject->getValue());
     }
 }
