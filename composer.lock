@@ -4,8 +4,72 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "03bf3b18d8ded9eb3469e63e9b84e771",
-    "packages": [],
+    "content-hash": "a9f1f3971bfa381c1a8e879aafb19ff1",
+    "packages": [
+        {
+            "name": "php-slang/php-slang",
+            "version": "v0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-slang/php-slang.git",
+                "reference": "67cd49b310d64fd801c6e5ed99c8af453382fdeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-slang/php-slang/zipball/67cd49b310d64fd801c6e5ed99c8af453382fdeb",
+                "reference": "67cd49b310d64fd801c6e5ed99c8af453382fdeb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PhpSlang\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Witold Adamus",
+                    "email": "witold.adamus@xsolve.pl"
+                }
+            ],
+            "description": "PHPSlang is a library that allow you to write a purely functional code in PHP",
+            "keywords": [
+                "collections",
+                "either",
+                "fp",
+                "functionalprogramming",
+                "future",
+                "immutability",
+                "immutable",
+                "lazy",
+                "monad",
+                "option",
+                "parallel",
+                "patternmatching",
+                "propertytesting",
+                "purelyfunctional",
+                "touple",
+                "trampolines",
+                "try",
+                "validation"
+            ],
+            "support": {
+                "issues": "https://github.com/php-slang/php-slang/issues",
+                "source": "https://github.com/php-slang/php-slang/tree/master"
+            },
+            "time": "2017-01-30T12:48:07+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "amphp/amp",

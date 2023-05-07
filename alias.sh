@@ -1,2 +1,2 @@
-alias php="docker-compose run php"
-alias composer="docker-compose run composer"
+alias php="docker-compose run --rm php php"
+alias composer="docker-compose run --rm composer composer"

@@ -1,2 +1,9 @@
+# ide
+launch.json
+
+# composer
 var/
 vendor/
+
+# phpunit
+.phpunit.result.cache
